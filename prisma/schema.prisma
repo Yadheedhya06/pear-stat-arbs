@@ -1,0 +1,22 @@
+generator client {
+    provider        = "prisma-client-js"
+    previewFeatures = ["fullTextSearchPostgres"]
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model historical_prices {
+    asset_symbol String
+    price_date   DateTime @db.Date
+    open         Decimal? @db.Decimal
+    high         Decimal? @db.Decimal
+    low          Decimal? @db.Decimal
+    close        Decimal? @db.Decimal
+    volume       Decimal? @db.Decimal
+
+    @@id([asset_symbol, price_date])
+    @@index([price_date(sort: Desc)])
+}

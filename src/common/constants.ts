@@ -1,0 +1,2 @@
+export const ORBS_SYMBOLS_URL = 'https://www.perps-streaming.com/v1/42161a/0x6273242a7E88b3De90822b31648C212215caaFE4/contract-symbols';
+export const BINANCE_KLINES_BASE_URL = 'https://fapi.binance.com/fapi/v1/klines';
